@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {EoCoreModule} from '@eo-sdk/core';
 import {EoClientModule} from '@eo-sdk/client';
 import {EoFrameworkCoreModule} from '@eo-sdk/client';
+import {EoCustomClientModule} from './eo-custom-client';
 import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
@@ -21,6 +22,7 @@ import {ToastrModule} from 'ngx-toastr';
       translations: ['assets/_default/i18n/', 'assets/i18n/']
     }),
     EoFrameworkCoreModule.forRoot(),
+    EoCustomClientModule.forRoot(),
     EoClientModule.forRoot()
   ],
   providers: [],
