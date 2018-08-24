@@ -1,0 +1,5 @@
+{
+  "eo.test.key": "test {{key}}",
+  "eo.custom.plugin.sample": "Sample Plugin",
+  "eo.custom.state.sample": "Sample State"
+}
