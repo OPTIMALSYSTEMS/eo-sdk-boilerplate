@@ -15,6 +15,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.3",
     "@eo-sdk/client": "5.1.0-beta.6"
   },
   "devDependencies": {
