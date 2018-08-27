@@ -3,9 +3,11 @@ import {CommonModule} from '@angular/common';
 import {EoFrameworkModule} from '@eo-sdk/client';
 import {ActionModule} from '@eo-sdk/client';
 import {BaseAction} from '@eo-sdk/client';
+import { FinalizeObjectActionComponent } from './finalize-object-action/finalize-object-action.component';
 
 export const entryComponents: BaseAction[] = [
-];
+FinalizeObjectActionComponent,
+  ];
 
 @NgModule({
   imports: [
@@ -13,7 +15,7 @@ export const entryComponents: BaseAction[] = [
     EoFrameworkModule,
     ActionModule.forRoot(entryComponents)
   ],
-  declarations: [],
+  declarations: [FinalizeObjectActionComponent],
   exports: [ActionModule]
 })
 export class CustomActionsModule {

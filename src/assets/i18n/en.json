@@ -1,4 +1,6 @@
 {
+  "eo.custom.action.finalize-object-action.description": "Finalizes the selected objects.",
+  "eo.custom.action.finalize-object-action.label": "Finalize",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin",
   "eo.custom.state.sample": "Sample State"
