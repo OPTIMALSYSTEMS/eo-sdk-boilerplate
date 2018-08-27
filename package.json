@@ -16,7 +16,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.3",
-    "@eo-sdk/client": "5.1.0-beta.6"
+    "@eo-sdk/client": "^5.1.0-beta.7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
