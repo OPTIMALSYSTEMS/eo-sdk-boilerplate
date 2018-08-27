@@ -2,6 +2,8 @@
   "eo.custom.plugin.map": "Stadtplan",
   "eo.custom.state.custom": "Custom state",
   "eo.custom.link.developer.enaio": "Enaio redline 4",
+  "eo.custom.action.finalize-object-action.description": "Finalisiert die selektierten Objekte.",
+  "eo.custom.action.finalize-object-action.label": "Finalisieren",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin DE",
   "eo.custom.state.sample": "Sample State DE"
