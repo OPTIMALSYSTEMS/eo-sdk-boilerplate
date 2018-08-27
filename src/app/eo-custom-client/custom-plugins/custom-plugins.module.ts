@@ -6,9 +6,11 @@ import {EoPlugin} from '@eo-sdk/client';
 import {links} from '../custom-states/custom-states.module';
 import {MapComponent} from './map/map.component';
 import {AgmCoreModule} from '@agm/core';
+import {MapFrameComponent} from './map-frame/map-frame.component';
 
 export const entryComponents: EoPlugin[] = [
   MapComponent,
+  MapFrameComponent,
 ];
 
 @NgModule({
@@ -18,7 +20,7 @@ export const entryComponents: EoPlugin[] = [
     AgmCoreModule.forRoot(),
     PluginsModule.forRoot(entryComponents, links)
   ],
-  declarations: [MapComponent],
+  declarations: [MapComponent, MapFrameComponent],
   exports: [PluginsModule]
 })
 export class CustomPluginsModule {
