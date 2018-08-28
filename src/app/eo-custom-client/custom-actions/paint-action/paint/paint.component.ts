@@ -5,6 +5,9 @@ import {EnaioEvent} from '@eo-sdk/core';
 import {PluginsService} from '@eo-sdk/client';
 import {HttpClient} from '@angular/common/http';
 
+// temporary fix: rxjs not compatible
+CanvasWhiteboardComponent.prototype['_initCanvasEventListeners'] = function () {};
+
 @Component({
   selector: 'eo-paint',
   template: `
@@ -24,6 +27,7 @@ import {HttpClient} from '@angular/common/http';
       </section>
     </eo-dialog>
   `,
+  viewProviders: [CanvasWhiteboardComponent],
   styles: [`
   ::ng-deep .canvas_whiteboard_buttons,
   ::ng-deep .canvas_whiteboard_button
