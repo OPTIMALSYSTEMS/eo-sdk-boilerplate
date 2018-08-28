@@ -1,4 +1,6 @@
 {
+  "eo.custom.action.menu.edit.picture.description": "Bild bearbeiten die selektierten Objekte.",
+  "eo.custom.action.menu.edit.picture.label": "Bild bearbeiten",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin DE",
   "eo.custom.state.sample": "Sample State DE"
