@@ -8,14 +8,14 @@
     "build:prod": "npm run sync && ng build --prod",
     "cleanup": "rimraf node_modules",
     "update": "npm install -P @eo-sdk/client@stable && npm run sync",
-    "sync": "node node_modules/@eo-sdk/client/assets/sync-eo-sdk-client-assets.js",
+    "sync": "node node_modules/@eo-sdk/client/misc/scripts/sync-eo-sdk-client-assets.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@eo-sdk/client": "5.1.0-beta.7"
+    "@eo-sdk/client": "5.1.0-beta.8"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
