@@ -7,10 +7,11 @@ import {
 } from '@angular/core';
 import {EnaioEvent} from '@eo-sdk/core';
 import {DmsObject} from '@eo-sdk/core';
-import {DmsService, DmsParams} from '@eo-sdk/core';
+import {DmsService} from '@eo-sdk/core';
 import {EventService} from '@eo-sdk/core';
 import {SelectionService} from '@eo-sdk/client';
 import {filter, flatMap, map} from 'rxjs/operators';
+import {LocationService} from '../../services/location.service';
 
 
 @Component({
@@ -24,35 +25,27 @@ export class MapFrameComponent implements AfterViewInit {
   static matchType: RegExp = /object-details-tab.*/;
 
   context;
+  mapAvailable;
   @ViewChild('mapFrame') mapFrame: ElementRef;
 
   constructor(private selectionService: SelectionService, private dmsService: DmsService,
-              private renderer: Renderer2, private eventService: EventService) {
+              private renderer: Renderer2, private eventService: EventService, private locationService: LocationService) {
   }
 
-  /**
-   * normalize Address data - map your data based on scheme properties
-   * @param data
-   * @returns
-   */
-  private normalize(data: any = {}): any {
-    return {
-      streethw: data.strassehw,
-      townhw: data.orthw,
-      countryhw: data.landhw,
-      ...data
-    };
+  private renderMap(location = {}) {
+    this.locationService
+      .mapsUrl(location)
+      .subscribe(url => {
+        this.mapAvailable = false;
+        this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
+      }, error => this.mapAvailable = error);
   }
 
-  private renderMap(address = '', city = '', country = '') {
-    const url = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDX8znfh-d4u3spGhC1GvCjq6EA1pjPovQ&q=${address}+${city}+${country}`;
-    this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
-  }
-
-  setupMap(data) {
-    const {streethw, townhw, countryhw} = this.normalize(data.data);
-    this.context = data;
-    this.renderMap(streethw, townhw, countryhw);
+  setupMap(dmsObj: DmsObject) {
+    const {typeName, data} = dmsObj;
+    const params = this.locationService.locationbData(typeName, data);
+    this.context = dmsObj;
+    this.renderMap(params);
   }
 
   ngAfterViewInit() {
@@ -61,7 +54,9 @@ export class MapFrameComponent implements AfterViewInit {
       .pipe(
         map(d => d.target || d.dmsItem || d),
         filter(d => d.id),
-        flatMap(d => this.dmsService.getDmsObject(d.id, d.typeName || d.type, d.version)),
+        flatMap(d => {
+          return this.dmsService.getDmsObject(d.id, d.typeName || d.type, d.version)
+        }),
       )
       .subscribe((data: DmsObject) => this.setupMap(data), error => this.renderMap());
 
