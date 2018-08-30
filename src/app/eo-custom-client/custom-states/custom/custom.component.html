@@ -1,3 +1,13 @@
-<p>
-  custom works!
-</p>
+<button class="summary" (click)="chartClicked()">
+  <span class="label" *ngIf="activeType != groupCount">{{types[groupCount][activeType].label}}: &nbsp;</span>
+  <span class="count" *ngIf="activeType != groupCount"> {{types[groupCount][activeType].count}} of &nbsp;</span>
+  <span class="total">{{totalCount}}</span>
+</button>
+
+<div class="chart-container">
+  <canvas baseChart *ngIf="barChart" height="100%"
+          [datasets]="barChart.data"
+          [labels]="barChart.labels"
+          [chartType]="'pie'"
+          (chartClick)="chartClicked($event)"></canvas>
+</div>
