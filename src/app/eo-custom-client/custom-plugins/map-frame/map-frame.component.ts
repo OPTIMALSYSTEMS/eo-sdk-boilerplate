@@ -30,15 +30,29 @@ export class MapFrameComponent implements AfterViewInit {
               private renderer: Renderer2, private eventService: EventService) {
   }
 
+  /**
+   * normalize Address data - map your data based on scheme properties
+   * @param data
+   * @returns
+   */
+  private normalize(data: any = {}): any {
+    return {
+      streethw: data.strassehw,
+      townhw: data.orthw,
+      countryhw: data.landhw,
+      ...data
+    };
+  }
+
   private renderMap(address = '', city = '', country = '') {
     const url = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDX8znfh-d4u3spGhC1GvCjq6EA1pjPovQ&q=${address}+${city}+${country}`;
     this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
   }
 
   setupMap(data) {
-    const {streethw, townhw, countryhw, strassehw, orthw, landhw} = data.data;
+    const {streethw, townhw, countryhw} = this.normalize(data.data);
     this.context = data;
-    this.renderMap(streethw || strassehw, townhw || orthw, countryhw || landhw);
+    this.renderMap(streethw, townhw, countryhw);
   }
 
   ngAfterViewInit() {
@@ -47,7 +61,7 @@ export class MapFrameComponent implements AfterViewInit {
       .pipe(
         map(d => d.target || d.dmsItem || d),
         filter(d => d.id),
-        flatMap(d => this.dmsService.getDmsObjectByParams(d as DmsParams)),
+        flatMap(d => this.dmsService.getDmsObject(d.id, d.typeName || d.type, d.version)),
       )
       .subscribe((data: DmsObject) => this.setupMap(data), error => this.renderMap());
 
