@@ -1,0 +1,32 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+
+  .summary {
+    align-items: baseline;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    flex: 1 1 auto;
+    display: flex;
+    background: papayawhip;
+    border-radius: 4px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    .label {
+      font-size: 1.5em;
+    }
+    .count {
+      font-size: 2.5em;
+    }
+    .total {
+      font-size: 3.5em;
+    }
+
+  }
+  .chart-container {
+    flex: 0 0 auto;
+  }
+}
