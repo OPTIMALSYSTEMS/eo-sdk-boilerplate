@@ -1,4 +1,12 @@
 {
+  "eo.custom.plugin.map": "Map",
+  "eo.custom.state.custom": "Custom state",
+  "eo.custom.link.developer.enaio": "Enaio redline 4",
+  "eo.custom.action.finalize-object-action.description": "Finalizes the selected objects.",
+  "eo.custom.action.finalize-object-action.label": "Finalize",
+  "eo.custom.plugin.map-frame": "GoogleMaps",
+  "eo.custom.action.menu.edit.picture.description": "Edit picture of the selected objects.",
+  "eo.custom.action.menu.edit.picture.label": "Edit picture",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin",
   "eo.custom.state.sample": "Sample State"

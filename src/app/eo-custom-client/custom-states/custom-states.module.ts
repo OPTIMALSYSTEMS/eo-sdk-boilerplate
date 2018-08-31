@@ -4,12 +4,17 @@ import {Route, RouterModule} from '@angular/router';
 import {EoFrameworkModule} from '@eo-sdk/client';
 import {EoLinkPlugin} from '@eo-sdk/client';
 import {AuthGuard} from '@eo-sdk/client';
+import {CustomComponent} from './custom/custom.component';
+import {ChartsModule} from 'ng2-charts';
 
 export const routes: Route[] = [
+  {path: CustomComponent.path, component: CustomComponent, canActivate: [AuthGuard]},
 ];
 
 export const links: EoLinkPlugin[] = [
-  // SampleComponent,
+  {path: 'https://developer.enaio.org/display/DD/enaio+redline+4+client', id: 'eo.custom.link.developer.enaio', matchType: /sidebar-profile/},
+  {path: 'https://developer.enaio.org/display/DD/enaio+redline+4+client', id: 'eo.custom.link.developer.enaio', matchType: /sidebar-navigation/},
+  CustomComponent
   // {path: '/dashboard', id: 'eo.custom.state.sample', matchType: /sidebar-navigation/, queryParams: {debug: true}},
   // {path: 'https://google.com/', id: 'eo.custom.state.sample', matchType: /sidebar-profile/}
 ];
@@ -18,9 +23,10 @@ export const links: EoLinkPlugin[] = [
   imports: [
     CommonModule,
     EoFrameworkModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ChartsModule
   ],
-  declarations: []
+  declarations: [CustomComponent]
 })
 export class CustomStatesModule {
 }
