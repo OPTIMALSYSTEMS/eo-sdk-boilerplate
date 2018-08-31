@@ -18,7 +18,7 @@ export class CustomComponent {
 
   groupCount: number;
   totalCount: number;
-  barChart;
+  chart;
   activeType = 0;
   types = [];
 
@@ -34,9 +34,9 @@ export class CustomComponent {
   chartClicked(el?) {
     if (!el || (this.activeType === this.groupCount && el.active[0])) {
       this.activeType = el ? el.active[0]._index : this.groupCount;
-      this.barChart = this.dataToChart(this.types[this.activeType]);
+      this.chart = this.dataToChart(this.types[this.activeType]);
       setTimeout(() => {
-        this.chartEl.chart.config.data.labels = this.barChart.labels;
+        this.chartEl.chart.config.data.labels = this.chart.labels;
         this.chartEl.chart.update();
         }, 0);
     }
