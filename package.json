@@ -1,12 +1,12 @@
 {
   "name": "eo-sdk-boilerplate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "config": {
     "resourcename": "boilerplate"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config node_modules/@eo-sdk/client/proxy.config.json --port=4222",
+    "start": "ng serve --proxy-config node_modules/@eo-sdk/client/proxy.config.json",
     "build": "npm run sync && ng build",
     "build:prod": "npm run sync && ng build --prod",
     "postbuild": "npm run postbuild:prod",
