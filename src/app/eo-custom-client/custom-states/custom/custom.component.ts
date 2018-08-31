@@ -14,7 +14,7 @@ export class CustomComponent extends UnsubscribeOnDestroy {
 
   static id = 'eo.custom.state.custom';
   static path = 'custom/custom';
-  static matchType: RegExp = /sidebar-navigation/;
+  static matchType = new RegExp('sidebar-navigation');
 
   groupCount: number;
   totalCount: number;
