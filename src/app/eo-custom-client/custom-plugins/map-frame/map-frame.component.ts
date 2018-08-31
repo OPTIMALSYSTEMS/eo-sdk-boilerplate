@@ -21,7 +21,7 @@ import {filter, flatMap, map, takeUntil} from 'rxjs/operators';
 export class MapFrameComponent extends UnsubscribeOnDestroy implements AfterViewInit {
 
   static id = 'eo.custom.plugin.map-frame';
-  static matchType: RegExp = /object-details-tab.*/;
+  static matchType = new RegExp ('object-details-tab.*');
 
   context;
   @ViewChild('mapFrame') mapFrame: ElementRef;
