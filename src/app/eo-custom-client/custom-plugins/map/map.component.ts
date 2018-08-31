@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MapComponent implements OnInit {
 
   static id = 'eo.custom.plugin.map';
-  static matchType: RegExp = /object-details-tab.*/;
+  static matchType = new RegExp ('object-details-tab.*');
 
   currentPosition;
 
