@@ -5,9 +5,9 @@
 </button>
 
 <div class="chart-container">
-  <canvas baseChart *ngIf="barChart" height="100%"
-          [datasets]="barChart.data"
-          [labels]="barChart.labels"
+  <canvas baseChart *ngIf="chart" height="100%"
+          [datasets]="chart.data"
+          [labels]="chart.labels"
           [chartType]="'pie'"
           (chartClick)="chartClicked($event)"></canvas>
 </div>
