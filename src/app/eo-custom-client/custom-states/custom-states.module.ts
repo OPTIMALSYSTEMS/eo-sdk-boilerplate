@@ -12,10 +12,7 @@ export const routes: Route[] = [
 ];
 
 export const links: EoLinkPlugin[] = [
-  CustomComponent,
-  // SampleComponent,
-  // {path: '/dashboard', id: 'eo.custom.state.sample', matchType: /sidebar-navigation/, queryParams: {debug: true}},
-  // {path: 'https://google.com/', id: 'eo.custom.state.sample', matchType: /sidebar-profile/}
+  CustomComponent
 ];
 
 @NgModule({
