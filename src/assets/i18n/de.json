@@ -1,4 +1,5 @@
 {
+  "eo.custom.state.custom": "Custom state",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin DE",
   "eo.custom.state.sample": "Sample State DE"
