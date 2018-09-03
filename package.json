@@ -2,7 +2,7 @@
   "name": "eo-sdk-boilerplate",
   "version": "1.0.0",
   "config": {
-    "resourcename": "boilerplate"
+    "resourcename": "custom"
   },
   "scripts": {
     "ng": "ng",
