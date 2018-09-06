@@ -1,14 +1,19 @@
 {
   "name": "eo-sdk-boilerplate",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "config": {
+    "resourcename": "custom"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config node_modules/@eo-sdk/client/proxy.config.json --port=4222",
+    "start": "ng serve --proxy-config node_modules/@eo-sdk/client/proxy.config.json",
     "build": "npm run sync && ng build",
     "build:prod": "npm run sync && ng build --prod",
+    "postbuild": "npm run postbuild:prod",
+    "postbuild:prod": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
     "cleanup": "rimraf node_modules",
     "update": "npm install -P @eo-sdk/client@stable && npm run sync",
-    "sync": "node node_modules/@eo-sdk/client/assets/sync-eo-sdk-client-assets.js",
+    "sync": "node node_modules/@eo-sdk/client/misc/scripts/sync-eo-sdk-client-assets.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -16,7 +21,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.3",
-    "@eo-sdk/client": "5.1.0-beta.6"
+    "@eo-sdk/client": "5.1.0-rc.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
@@ -26,6 +31,7 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "bestzip": "1.1.4",
     "codelyzer": "~4.2.1",
     "fs-extra": "^7.0.0",
     "jasmine-core": "~2.99.1",
@@ -36,7 +42,8 @@
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
-    "rimraf": "^2.6.2",
+    "replace-in-file": "~3.4.2",
+    "rimraf": "~2.6.2",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
