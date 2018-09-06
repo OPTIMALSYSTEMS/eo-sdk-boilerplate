@@ -1,5 +1,6 @@
 {
   "eo.custom.plugin.map": "Stadtplan",
+  "eo.custom.plugin.map.secure.origin": "Bitte wechseln sie zu einer sicheren verbindung (https)",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin DE",
   "eo.custom.state.sample": "Sample State DE"
