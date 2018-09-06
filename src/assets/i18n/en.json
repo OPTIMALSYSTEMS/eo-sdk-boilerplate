@@ -7,6 +7,7 @@
   "eo.custom.plugin.map-frame": "GoogleMaps",
   "eo.custom.action.menu.edit.picture.description": "Edit picture of the selected objects.",
   "eo.custom.action.menu.edit.picture.label": "Edit picture",
+  "eo.custom.plugin.map.secure.origin": "Please, change to a secure connection (https)",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin",
   "eo.custom.state.sample": "Sample State"
