@@ -21,7 +21,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.3",
-    "@eo-sdk/client": "5.1.0-rc.3",
+    "@eo-sdk/client": "5.1.0-beta.11",
     "ng2-canvas-whiteboard": "^2.1.1",
     "ng2-charts": "1.6.0"
   },
