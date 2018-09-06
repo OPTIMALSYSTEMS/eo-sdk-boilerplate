@@ -23,6 +23,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@eo-sdk/client/assets/",
+                "output": "./assets/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
