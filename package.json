@@ -11,7 +11,6 @@
     "build:prod": "ng build --prod",
     "postbuild": "npm run postbuild:prod",
     "postbuild:prod": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
-    "cleanup": "rimraf node_modules",
     "update": "npm install -P @eo-sdk/client@stable",
     "test": "ng test",
     "lint": "ng lint",
@@ -44,7 +43,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "replace-in-file": "~3.4.2",
-    "rimraf": "~2.6.2",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2"
