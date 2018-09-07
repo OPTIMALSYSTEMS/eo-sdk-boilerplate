@@ -18,7 +18,7 @@
   },
   "private": true,
   "dependencies": {
-    "@eo-sdk/client": "5.1.0-beta.11"
+    "@eo-sdk/client": "5.1.3-beta.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
