@@ -8,6 +8,6 @@
   <canvas baseChart *ngIf="chart" height="100%"
           [datasets]="chart.data"
           [labels]="chart.labels"
-          [chartType]="'pie'"
+          [chartType]="'doughnut'"
           (chartClick)="chartClicked($event)"></canvas>
 </div>
