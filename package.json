@@ -11,7 +11,7 @@
     "build:prod": "ng build --prod",
     "postbuild": "npm run postbuild:prod",
     "postbuild:prod": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
-    "update": "npm install -P @eo-sdk/client@stable",
+    "update": "npm install -P --save-exact @eo-sdk/client@stable",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
