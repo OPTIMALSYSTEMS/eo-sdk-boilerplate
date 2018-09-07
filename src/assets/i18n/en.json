@@ -1,4 +1,6 @@
 {
+  "eo.custom.state.simple-preview": "Simple Preview",
+  "eo.custom.state.simple-list": "Simple List",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin",
   "eo.custom.state.sample": "Sample State"
