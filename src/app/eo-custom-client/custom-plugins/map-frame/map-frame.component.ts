@@ -8,6 +8,7 @@ import {
 import {DmsService, DmsObject, EventService, EnaioEvent, Event} from '@eo-sdk/core';
 import {SelectionService, UnsubscribeOnDestroy} from '@eo-sdk/client';
 import {takeUntil} from 'rxjs/operators';
+import {LocationService} from '../../services/location.service';
 
 
 @Component({
@@ -21,25 +22,15 @@ export class MapFrameComponent extends UnsubscribeOnDestroy implements AfterView
   static matchType = new RegExp('object-details-tab.*');
 
   context;
+  mapAvailable;
   @ViewChild('mapFrame') mapFrame: ElementRef;
 
-  constructor(private selectionService: SelectionService, private dmsService: DmsService,
-              private renderer: Renderer2, private eventService: EventService) {
+  constructor(private selectionService: SelectionService,
+              private dmsService: DmsService,
+              private renderer: Renderer2,
+              private eventService: EventService,
+              private locationService: LocationService) {
     super();
-  }
-
-  /**
-   * normalize Address data - map your data based on scheme properties
-   * @param data
-   * @returns
-   */
-  private normalize(data: any = {}): any {
-    return {
-      streethw: data.strassehw,
-      townhw: data.orthw,
-      countryhw: data.landhw,
-      ...data
-    };
   }
 
   /**
@@ -48,9 +39,17 @@ export class MapFrameComponent extends UnsubscribeOnDestroy implements AfterView
    */
   setupMap(dmsObj: DmsObject) {
     if (dmsObj) {
-      const {streethw, townhw, countryhw} = this.normalize(dmsObj.data);
-      const url = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDX8znfh-d4u3spGhC1GvCjq6EA1pjPovQ&q=${streethw}+${townhw}+${countryhw}`;
-      this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
+      const {typeName, data} = dmsObj;
+      const location = this.locationService.locationbData(typeName, data);
+      this.locationService
+        .mapsUrl(location)
+        .pipe(
+          takeUntil(this.componentDestroyed$)
+        )
+        .subscribe(url => {
+          this.mapAvailable = false;
+          this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
+        }, error => this.mapAvailable = error);
     }
   }
 
