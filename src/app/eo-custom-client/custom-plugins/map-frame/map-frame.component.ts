@@ -5,12 +5,9 @@ import {
   ElementRef,
   Renderer2
 } from '@angular/core';
-import {EnaioEvent} from '@eo-sdk/core';
-import {DmsObject} from '@eo-sdk/core';
-import {DmsService, DmsParams} from '@eo-sdk/core';
-import {EventService} from '@eo-sdk/core';
+import {DmsService, DmsObject, EventService, EnaioEvent, Event} from '@eo-sdk/core';
 import {SelectionService, UnsubscribeOnDestroy} from '@eo-sdk/client';
-import {filter, flatMap, map, takeUntil} from 'rxjs/operators';
+import {takeUntil} from 'rxjs/operators';
 
 
 @Component({
@@ -21,7 +18,7 @@ import {filter, flatMap, map, takeUntil} from 'rxjs/operators';
 export class MapFrameComponent extends UnsubscribeOnDestroy implements AfterViewInit {
 
   static id = 'eo.custom.plugin.map-frame';
-  static matchType = new RegExp ('object-details-tab.*');
+  static matchType = new RegExp('object-details-tab.*');
 
   context;
   @ViewChild('mapFrame') mapFrame: ElementRef;
@@ -45,38 +42,36 @@ export class MapFrameComponent extends UnsubscribeOnDestroy implements AfterView
     };
   }
 
-  private renderMap(address = '', city = '', country = '') {
-    const url = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDX8znfh-d4u3spGhC1GvCjq6EA1pjPovQ&q=${address}+${city}+${country}`;
-    this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
+  /**
+   * Process dmsObject to get the url for map frame
+   * @param dmsObj
+   */
+  setupMap(dmsObj: DmsObject) {
+    if (dmsObj) {
+      const {streethw, townhw, countryhw} = this.normalize(dmsObj.data);
+      const url = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDX8znfh-d4u3spGhC1GvCjq6EA1pjPovQ&q=${streethw}+${townhw}+${countryhw}`;
+      this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
+    }
   }
 
-  setupMap(data) {
-    const {streethw, townhw, countryhw} = this.normalize(data.data);
-    this.context = data;
-    this.renderMap(streethw, townhw, countryhw);
+  /**
+   * Load & update current context/dmsObject
+   * @param event
+   */
+  eventHandler(event: Event) {
+    if (event.type === EnaioEvent.DMS_OBJECT_LOADED || (this.context && this.context.id === event.data.id)) {
+      this.context = event.data;
+      this.setupMap(event.data);
+    }
   }
 
   ngAfterViewInit() {
 
-    this.selectionService.focus$
-      .pipe(
-        takeUntil(this.componentDestroyed$),
-        map(d => d.target || d.dmsItem || d),
-        filter(d => d.id),
-        flatMap(d => this.dmsService.getDmsObject(d.id, d.typeName || d.type, d.version)),
-      )
-      .subscribe((data: DmsObject) => this.setupMap(data), error => this.renderMap());
-
-
     this.eventService
-      .on(EnaioEvent.DMS_OBJECT_UPDATED)
+      .on(EnaioEvent.DMS_OBJECT_LOADED, EnaioEvent.DMS_OBJECT_UPDATED)
       .pipe(
         takeUntil(this.componentDestroyed$)
       )
-      .subscribe(event => {
-        if (this.context && this.context.id === event.data.id) {
-          this.setupMap(event.data);
-        }
-      });
+      .subscribe(e => this.eventHandler(e));
   }
 }
