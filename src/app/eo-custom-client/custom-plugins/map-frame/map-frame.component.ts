@@ -5,12 +5,9 @@ import {
   ElementRef,
   Renderer2
 } from '@angular/core';
-import {EnaioEvent} from '@eo-sdk/core';
-import {DmsObject} from '@eo-sdk/core';
-import {DmsService} from '@eo-sdk/core';
-import {EventService} from '@eo-sdk/core';
+import {DmsService, DmsObject, EventService, EnaioEvent, Event} from '@eo-sdk/core';
 import {SelectionService, UnsubscribeOnDestroy} from '@eo-sdk/client';
-import {filter, flatMap, map, takeUntil} from 'rxjs/operators';
+import {takeUntil} from 'rxjs/operators';
 import {LocationService} from '../../services/location.service';
 
 
@@ -22,7 +19,7 @@ import {LocationService} from '../../services/location.service';
 export class MapFrameComponent extends UnsubscribeOnDestroy implements AfterViewInit {
 
   static id = 'eo.custom.plugin.map-frame';
-  static matchType = new RegExp ('object-details-tab.*');
+  static matchType = new RegExp('object-details-tab.*');
 
   context;
   mapAvailable;
@@ -36,48 +33,44 @@ export class MapFrameComponent extends UnsubscribeOnDestroy implements AfterView
     super();
   }
 
-  private renderMap(location = {}) {
-    this.locationService
-      .mapsUrl(location)
-      .pipe(
-        takeUntil(this.componentDestroyed$)
-      )
-      .subscribe(url => {
-        this.mapAvailable = false;
-        this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
-      }, error => this.mapAvailable = error);
+  /**
+   * Process dmsObject to get the url for map frame
+   * @param dmsObj
+   */
+  setupMap(dmsObj: DmsObject) {
+    if (dmsObj) {
+      const {typeName, data} = dmsObj;
+      const location = this.locationService.locationbData(typeName, data);
+      this.locationService
+        .mapsUrl(location)
+        .pipe(
+          takeUntil(this.componentDestroyed$)
+        )
+        .subscribe(url => {
+          this.mapAvailable = false;
+          this.renderer.setAttribute(this.mapFrame.nativeElement, 'src', url);
+        }, error => this.mapAvailable = error);
+    }
   }
 
-  setupMap(dmsObj: DmsObject) {
-    const {typeName, data} = dmsObj;
-    const params = this.locationService.locationbData(typeName, data);
-    this.context = dmsObj;
-    this.renderMap(params);
+  /**
+   * Load & update current context/dmsObject
+   * @param event
+   */
+  eventHandler(event: Event) {
+    if (event.type === EnaioEvent.DMS_OBJECT_LOADED || (this.context && this.context.id === event.data.id)) {
+      this.context = event.data;
+      this.setupMap(event.data);
+    }
   }
 
   ngAfterViewInit() {
 
-    this.selectionService.focus$
-      .pipe(
-        takeUntil(this.componentDestroyed$),
-        map(d => d.target || d.dmsItem || d),
-        filter(d => d.id),
-        flatMap(d => {
-          return this.dmsService.getDmsObject(d.id, d.typeName || d.type, d.version);
-        }),
-      )
-      .subscribe((data: DmsObject) => this.setupMap(data), error => this.renderMap());
-
-
     this.eventService
-      .on(EnaioEvent.DMS_OBJECT_UPDATED)
+      .on(EnaioEvent.DMS_OBJECT_LOADED, EnaioEvent.DMS_OBJECT_UPDATED)
       .pipe(
         takeUntil(this.componentDestroyed$)
       )
-      .subscribe(event => {
-        if (this.context && this.context.id === event.data.id) {
-          this.setupMap(event.data);
-        }
-      });
+      .subscribe(e => this.eventHandler(e));
   }
 }
