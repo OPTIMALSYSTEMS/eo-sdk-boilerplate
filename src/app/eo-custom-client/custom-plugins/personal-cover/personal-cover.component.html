@@ -2,3 +2,6 @@
   <eo-icon [objectType]="holiday.objectType" [iconTitle]="holiday.title" (click)="selectHoliday()"></eo-icon>
 </p>
 <eo-media *ngIf="picture" [dmsObject]="picture" #viewer></eo-media>
+<div [hidden]="!!picture" class="empty-container">
+  <eo-icon class="nofile" [iconSrc]="'assets/_default/svg/ic_no-file.svg'"></eo-icon>
+</div>
