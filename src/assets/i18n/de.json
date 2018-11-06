@@ -10,6 +10,7 @@
   "eo.custom.plugin.map.secure.origin": "Bitte wechseln sie zu einer sicheren verbindung (https)",
   "eo.custom.state.simple-preview": "Einfache Vorschau",
   "eo.custom.state.simple-list": "Einfache Liste",
+  "eo.custom.plugin.personal-cover": "Aktendeckel",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin DE",
   "eo.custom.state.sample": "Sample State DE"

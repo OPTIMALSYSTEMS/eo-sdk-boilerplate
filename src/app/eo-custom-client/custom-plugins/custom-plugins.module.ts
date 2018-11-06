@@ -7,10 +7,12 @@ import {links} from '../custom-states/custom-states.module';
 import {MapComponent} from './map/map.component';
 import {AgmCoreModule} from '@agm/core';
 import {MapFrameComponent} from './map-frame/map-frame.component';
+import {PersonalCoverComponent} from './personal-cover/personal-cover.component';
 
 export const entryComponents: EoPlugin[] = [
   MapComponent,
   MapFrameComponent,
+  PersonalCoverComponent,
 ];
 
 @NgModule({
@@ -20,7 +22,7 @@ export const entryComponents: EoPlugin[] = [
     AgmCoreModule.forRoot(),
     PluginsModule.forRoot(entryComponents, links)
   ],
-  declarations: [MapComponent, MapFrameComponent],
+  declarations: [MapComponent, MapFrameComponent, PersonalCoverComponent],
   exports: [PluginsModule]
 })
 export class CustomPluginsModule {
