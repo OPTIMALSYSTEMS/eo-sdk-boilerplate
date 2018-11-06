@@ -1,0 +1,4 @@
+<p class="holiday" *ngIf="holiday">
+  <eo-icon [objectType]="holiday.objectType" [iconTitle]="holiday.title" (click)="selectHoliday()"></eo-icon>
+</p>
+<eo-media *ngIf="picture" [dmsObject]="picture" #viewer></eo-media>

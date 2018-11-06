@@ -4,9 +4,11 @@ import {EoFrameworkModule} from '@eo-sdk/client';
 import {PluginsModule} from '@eo-sdk/client';
 import {EoPlugin} from '@eo-sdk/client';
 import {links} from '../custom-states/custom-states.module';
+import { PersonalCoverComponent } from './personal-cover/personal-cover.component';
 
 export const entryComponents: EoPlugin[] = [
-];
+PersonalCoverComponent,
+  ];
 
 @NgModule({
   imports: [
@@ -14,7 +16,7 @@ export const entryComponents: EoPlugin[] = [
     EoFrameworkModule,
     PluginsModule.forRoot(entryComponents, links)
   ],
-  declarations: [],
+  declarations: [PersonalCoverComponent],
   exports: [PluginsModule]
 })
 export class CustomPluginsModule {

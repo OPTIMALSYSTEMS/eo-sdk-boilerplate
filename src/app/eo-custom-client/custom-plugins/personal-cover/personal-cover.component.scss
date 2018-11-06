@@ -1,0 +1,14 @@
+:host {
+  .holiday {
+    position: absolute;
+    z-index: 10000;
+    top: 2em;
+    left: 2em;
+    eo-icon {
+      color: var(--color-accent);
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
