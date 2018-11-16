@@ -1,7 +1,22 @@
-<p class="holiday" *ngIf="holiday">
-  <eo-icon [objectType]="holiday.objectType" [iconTitle]="holiday.title" (click)="selectHoliday()"></eo-icon>
-</p>
-<eo-media *ngIf="picture" [dmsObject]="picture" #viewer></eo-media>
-<div [hidden]="!!picture" class="empty-container">
-  <eo-icon class="nofile" [iconSrc]="'assets/_default/svg/ic_no-file.svg'"></eo-icon>
+<div class="eo-head">
+  <header class="eo-header">
+    <eo-icon class="eo-header-icon white" [objectType]="context.type" [iconTitle]="context.type.label"></eo-icon>
+    <div class="eo-header-info eo-header__content">
+      <h2 class="eo-header-title">{{context.title}}</h2>
+      <h3 class="eo-header-subtitle">
+        <span translate>eo.state.object.frontpage.created</span>
+        <span class="date">&nbsp;{{context.created.on | localeDate}}</span>
+      </h3>
+    </div>
+    <div class="eo-header-actions">
+      <eo-icon *ngIf="holiday" [objectType]="holiday.objectType" [iconTitle]="holiday.title" (click)="selectHoliday()"></eo-icon>
+    </div>
+  </header>
+</div>
+
+<div class="eo-body">
+  <eo-media *ngIf="picture" [dmsObject]="picture" #viewer></eo-media>
+  <div [hidden]="!!picture" class="empty-container">
+    <eo-icon class="nofile" [iconSrc]="'assets/_default/svg/ic_no-file.svg'"></eo-icon>
+  </div>
 </div>
