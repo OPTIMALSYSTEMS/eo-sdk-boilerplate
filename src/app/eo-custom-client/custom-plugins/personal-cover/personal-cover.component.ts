@@ -14,6 +14,7 @@ export class PersonalCoverComponent implements OnInit {
   static id = 'eo.custom.plugin.personal-cover';
   static matchType = new RegExp('object-state-details-tab.*');
 
+  context: DmsObject;
   picture: DmsObject;
   holiday: any;
 
@@ -55,6 +56,7 @@ export class PersonalCoverComponent implements OnInit {
 
   ngOnInit() {
     const data = this.normalize({});
+    this.context = this.parent.context;
 
     // load ID picture result & related DmsObject which contains the picture
     this.loadByQuery(this.parent.context, [`Types[${data.pictureType}]`]).pipe(

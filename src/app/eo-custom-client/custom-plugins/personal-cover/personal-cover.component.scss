@@ -1,14 +1,12 @@
 :host {
-  .holiday {
-    position: absolute;
-    z-index: 5;
-    top: 2em;
-    left: 2em;
+  eo-icon.eo-header-icon {
+    padding: 0;
+  }
+  .eo-header-actions {
     eo-icon {
       color: var(--color-accent);
       cursor: pointer;
-      width: 48px;
-      height: 48px;
+      padding: 0;
     }
   }
   .empty-container {
