@@ -3,9 +3,11 @@ import {CommonModule} from '@angular/common';
 import {EoFrameworkModule} from '@eo-sdk/client';
 import {ActionModule} from '@eo-sdk/client';
 import {BaseAction} from '@eo-sdk/client';
+import { OpenInGalleryComponent } from './open-in-gallery/open-in-gallery.component';
 
 export const entryComponents: BaseAction[] = [
-];
+OpenInGalleryComponent,
+  ];
 
 @NgModule({
   imports: [
@@ -13,7 +15,7 @@ export const entryComponents: BaseAction[] = [
     EoFrameworkModule,
     ActionModule.forRoot(entryComponents)
   ],
-  declarations: [],
+  declarations: [OpenInGalleryComponent],
   exports: [ActionModule]
 })
 export class CustomActionsModule {
