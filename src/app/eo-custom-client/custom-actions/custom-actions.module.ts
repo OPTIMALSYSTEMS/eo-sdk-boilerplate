@@ -7,11 +7,13 @@ import {FinalizeObjectActionComponent} from './finalize-object-action/finalize-o
 import {PaintActionComponent} from './paint-action/paint-action.component';
 import {PaintComponent} from './paint-action/paint/paint.component';
 import {CanvasWhiteboardModule} from 'ng2-canvas-whiteboard';
+import {OpenInGalleryComponent} from './open-in-gallery/open-in-gallery.component';
 
 export const entryComponents: BaseAction[] = [
   FinalizeObjectActionComponent,
   PaintComponent,
   PaintActionComponent,
+  OpenInGalleryComponent,
 ];
 
 @NgModule({
@@ -21,7 +23,7 @@ export const entryComponents: BaseAction[] = [
     CanvasWhiteboardModule,
     ActionModule.forRoot(entryComponents)
   ],
-  declarations: [FinalizeObjectActionComponent, PaintActionComponent, PaintComponent],
+  declarations: [FinalizeObjectActionComponent, PaintActionComponent, PaintComponent, OpenInGalleryComponent],
   exports: [ActionModule]
 })
 export class CustomActionsModule {

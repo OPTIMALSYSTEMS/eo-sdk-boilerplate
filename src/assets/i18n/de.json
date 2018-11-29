@@ -11,6 +11,7 @@
   "eo.custom.state.simple-preview": "Einfache Vorschau",
   "eo.custom.state.simple-list": "Einfache Liste",
   "eo.custom.plugin.personal-cover": "Aktendeckel",
+  "eo.custom.action.gallery": "In Galerie-Ansicht öffnen",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin DE",
   "eo.custom.state.sample": "Sample State DE"

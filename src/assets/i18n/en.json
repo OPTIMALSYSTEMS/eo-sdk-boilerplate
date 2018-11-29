@@ -11,6 +11,7 @@
   "eo.custom.state.simple-preview": "Simple Preview",
   "eo.custom.state.simple-list": "Simple List",
   "eo.custom.plugin.personal-cover": "Cover sheet",
+  "eo.custom.action.gallery": "Open in gallery",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin",
   "eo.custom.state.sample": "Sample State"
