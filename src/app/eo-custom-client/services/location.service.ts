@@ -21,8 +21,8 @@ export class LocationService {
       streethw: data.strassehw,
       townhw: data.orthw,
       countryhw: data.landhw,
-      photogpsla: data.photogpsla,
-      photogpslo: data.photogpslo,
+      photogpsla: data.imagegpsla,
+      photogpslo: data.imagegpslo,
       ...data
     };
   }
