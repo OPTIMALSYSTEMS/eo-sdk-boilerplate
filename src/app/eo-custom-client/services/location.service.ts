@@ -50,7 +50,7 @@ export class LocationService {
 
   /**
    * Geo Coordinates are assumed to be only present in photo Objects.
-   * We check the objects type to either retrieve Geo Coordinates or Address Data.
+   * We check the data to either retrieve Geo Coordinates or Address Data.
    * If neither is available we return empty type.
    *
    * @param typeName
@@ -58,8 +58,8 @@ export class LocationService {
    * @returns
    */
   locationbData(typeName: string, data: Object): LocationByAddress | LocationByCoords | NoLocation {
-    let normalizedData = this.normalize(data);
-    return typeName === 'albumphoto' ? this.locationbDataWithCoords(normalizedData) : this.locationbDataWithAddress(normalizedData);
+    const normalizedData = this.normalize(data);
+    return normalizedData.photogpsla ? this.locationbDataWithCoords(normalizedData) : this.locationbDataWithAddress(normalizedData);
   }
 
   /**

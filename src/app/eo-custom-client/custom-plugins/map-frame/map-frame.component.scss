@@ -17,3 +17,29 @@
     }
   }
 }
+
+// Display map-frame plugin only per specific types that contains Geo Coordinates or Address Data 
+::ng-deep {
+  // by default hide map-frame plugin (tab content & tab label)
+  eo-object-details [id="eo.custom.plugin.map-frame"],
+  eo-object-details [id="eo.custom.plugin.map-frame-label"] {
+    display: none;
+  }
+
+  // display map-frame only per specific types
+  eo-object-details[data-type=personalakte] [id="eo.custom.plugin.map-frame"],
+  eo-object-details[data-type=personalakte] [id="eo.custom.plugin.map-frame-label"],
+
+  eo-object-details[data-type=photobasic] [id="eo.custom.plugin.map-frame"],
+  eo-object-details[data-type=photobasic] [id="eo.custom.plugin.map-frame-label"],
+
+  eo-object-details[data-type=foto] [id="eo.custom.plugin.map-frame"],
+  eo-object-details[data-type=foto] [id="eo.custom.plugin.map-frame-label"],
+
+  eo-object-details[data-type=albumphoto] [id="eo.custom.plugin.map-frame"],
+  eo-object-details[data-type=albumphoto] [id="eo.custom.plugin.map-frame-label"] {
+    display: block;
+  }
+}
+
+  
