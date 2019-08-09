@@ -18,9 +18,9 @@ export class SimpleListComponent extends UnsubscribeOnDestroy implements OnInit 
 
   /* set specific existing query to provide correct link */
   /* multiple ways how to set query based on input format */
-  // static queryParams = {query : '%7B%22types%22%3A%5B%22eoxemail%22%5D%7D'};
-  // static queryParams = {query : decodeURIComponent('%257B%2522types%2522%253A%255B%2522eoxemail%2522%255D%257D')};
-  static queryParams = {query: encodeURIComponent(JSON.stringify({'types': ['eoxemail']}))};
+  // static queryParams = {query : '%7B%22types%22%3A%5B%22email%22%5D%7D'};
+  // static queryParams = {query : decodeURIComponent('%257B%2522types%2522%253A%255B%2522email%2522%255D%257D')};
+  static queryParams = {query: encodeURIComponent(JSON.stringify({'types': ['email']}))};
 
   query: SearchQuery;
   searchResult: SearchResult = new SearchResult();
