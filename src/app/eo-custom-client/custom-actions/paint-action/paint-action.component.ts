@@ -29,6 +29,7 @@ export class PaintActionComponent extends DmsObjectTarget implements ExternalCom
   }
 
   isExecutable(element: DmsObject) {
-    return observableOf(!!element.content);
+    // enable action only if DmsObject can be edited
+    return observableOf(!!element.content && !element.isFinalized && element.rights.edit);
   }
 }
