@@ -18,7 +18,7 @@
   },
   "private": true,
   "dependencies": {
-    "@eo-sdk/client": "5.18.1"
+    "@eo-sdk/client": "5.28.7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
@@ -38,7 +38,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "protractor": "~5.4.0",
     "replace-in-file": "~3.4.2",
     "ts-node": "~5.0.1",
