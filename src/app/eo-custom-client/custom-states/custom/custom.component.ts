@@ -61,7 +61,8 @@ export class CustomComponent extends UnsubscribeOnDestroy {
         takeUntil(this.componentDestroyed$)
       )
       .subscribe(res => {
-          this.totalCount = res.count;
+          const {totalCount, count} = res as any; // support for old version of SearchState
+          this.totalCount = totalCount !== undefined ? totalCount : count;
           this.groupCount = this.appSearchService.objectTypeGroups.length;
           this.types = [];
 
