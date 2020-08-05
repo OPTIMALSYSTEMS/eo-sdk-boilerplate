@@ -21,16 +21,8 @@ export const routes: Route[] = [
 ];
 
 export const links: EoLinkPlugin[] = [
-  {
-    path: 'https://developer.enaio.org/display/DD/enaio+redline+4+client',
-    id: 'eo.custom.link.developer.enaio',
-    matchType: new RegExp('sidebar-profile')
-  },
-  {
-    path: 'https://developer.enaio.org/display/DD/enaio+redline+4+client',
-    id: 'eo.custom.link.developer.enaio',
-    matchType: new RegExp('sidebar-navigation')
-  },
+  class { static path = 'https://developer.enaio.org/redline/display/DD/Customization+of+enaio+redline+4+client'; static id = 'eo.custom.link.developer.enaio'; static matchType = new RegExp('sidebar-navigation'); },
+  class { static path = 'https://developer.enaio.org/redline/display/DD/Customization+of+enaio+redline+4+client'; static id = 'eo.custom.link.developer.enaio'; static matchType = new RegExp('sidebar-profile'); },
   CustomComponent,
   SimplePreviewComponent,
   SimpleListComponent,
