@@ -12,6 +12,11 @@ import {SimplePreviewComponent} from './simple-preview/simple-preview.component'
 import {GalleryComponent} from './gallery/gallery.component';
 import {GalleryModule} from '@ngx-gallery/core';
 import 'hammerjs';
+export class EoCustomLinkDeveloperEnaio {
+  static path = 'https://developer.enaio.org/redline/display/DD/Customization+of+enaio+redline+4+client';
+  static id = 'eo.custom.link.developer.enaio';
+  static matchType = new RegExp('sidebar-navigation|sidebar-profile');
+}
 
 export const routes: Route[] = [
   {path: CustomComponent.path, component: CustomComponent, canActivate: [AuthGuard]},
@@ -21,8 +26,7 @@ export const routes: Route[] = [
 ];
 
 export const links: EoLinkPlugin[] = [
-  class { static path = 'https://developer.enaio.org/redline/display/DD/Customization+of+enaio+redline+4+client'; static id = 'eo.custom.link.developer.enaio'; static matchType = new RegExp('sidebar-navigation'); },
-  class { static path = 'https://developer.enaio.org/redline/display/DD/Customization+of+enaio+redline+4+client'; static id = 'eo.custom.link.developer.enaio'; static matchType = new RegExp('sidebar-profile'); },
+  EoCustomLinkDeveloperEnaio,
   CustomComponent,
   SimplePreviewComponent,
   SimpleListComponent,
