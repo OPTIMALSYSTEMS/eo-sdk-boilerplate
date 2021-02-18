@@ -1,4 +1,17 @@
 {
+  "eo.custom.plugin.map": "Stadtplan",
+  "eo.custom.state.custom": "Custom state",
+  "eo.custom.link.developer.enaio": "Enaio redline 4",
+  "eo.custom.action.finalize-object-action.description": "Finalisiert die selektierten Objekte.",
+  "eo.custom.action.finalize-object-action.label": "Finalisieren",
+  "eo.custom.plugin.map-frame": "GoogleMaps",
+  "eo.custom.action.menu.edit.picture.description": "Bild bearbeiten die selektierten Objekte.",
+  "eo.custom.action.menu.edit.picture.label": "Bild bearbeiten",
+  "eo.custom.plugin.map.secure.origin": "Bitte wechseln sie zu einer sicheren verbindung (https)",
+  "eo.custom.state.simple-preview": "Einfache Vorschau",
+  "eo.custom.state.simple-list": "Einfache Liste",
+  "eo.custom.plugin.personal-cover": "Aktendeckel",
+  "eo.custom.action.gallery": "In Galerie-Ansicht öffnen",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin DE",
   "eo.custom.state.sample": "Sample State DE"

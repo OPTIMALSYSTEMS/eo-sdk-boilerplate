@@ -1,0 +1,27 @@
+:host {
+  eo-icon.eo-header-icon {
+    padding: 0;
+  }
+  .eo-header-actions {
+    eo-icon {
+      color: var(--color-accent);
+      cursor: pointer;
+      padding: 0;
+    }
+  }
+  .empty-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nofile {
+      width: 128px;
+      height: 128px;
+      opacity: .06;
+    }
+  }
+}

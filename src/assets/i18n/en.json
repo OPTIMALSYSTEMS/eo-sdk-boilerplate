@@ -1,4 +1,17 @@
 {
+  "eo.custom.plugin.map": "Map",
+  "eo.custom.state.custom": "Custom state",
+  "eo.custom.link.developer.enaio": "Enaio redline 4",
+  "eo.custom.action.finalize-object-action.description": "Finalizes the selected objects.",
+  "eo.custom.action.finalize-object-action.label": "Finalize",
+  "eo.custom.plugin.map-frame": "GoogleMaps",
+  "eo.custom.action.menu.edit.picture.description": "Edit picture of the selected objects.",
+  "eo.custom.action.menu.edit.picture.label": "Edit picture",
+  "eo.custom.plugin.map.secure.origin": "Please, change to a secure connection (https)",
+  "eo.custom.state.simple-preview": "Simple Preview",
+  "eo.custom.state.simple-list": "Simple List",
+  "eo.custom.plugin.personal-cover": "Cover sheet",
+  "eo.custom.action.gallery": "Open in gallery",
   "eo.test.key": "test {{key}}",
   "eo.custom.plugin.sample": "Sample Plugin",
   "eo.custom.state.sample": "Sample State"
