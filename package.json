@@ -19,7 +19,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "1.0.0-beta.7",
-    "@eo-sdk/client": "7.0.0-beta.0",
+    "@eo-sdk/client": "10.0.0-beta.4",
     "@ngx-gallery/core": "4.0.1",
     "hammerjs": "^2.0.8",
     "ng2-canvas-whiteboard": "4.0.2",
