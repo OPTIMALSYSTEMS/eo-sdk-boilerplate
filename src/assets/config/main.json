@@ -1,0 +1,39 @@
+{
+  "uri": {
+    "serviceBase": "/rest-ws/service",
+    "searchBase": "/search",
+    "contextBase": "/structure",
+    "inboxBase": "/inboxservice",
+    "bpmBase": "/bpm",
+    "agentBase": "/agent"
+  },
+  "search": {
+    "searchMode": "idxs",
+    "limit": 100
+  },
+  "languages": [
+    {
+      "iso": "de",
+      "label": "Deutsch"
+    },
+    {
+      "iso": "en",
+      "label": "English",
+      "fallback": true
+    }
+  ],
+  "agent": {
+    "alias": "",
+    "autoconnect": false
+  },
+  "about": {
+    "docu": {
+      "link": "https://help.enaio.com/redline4/user/###userLang###/index.html",
+      "label": "eo.sidebar.help.manual"
+    }
+  },
+  "dashboardBackgroundImage": "./assets/_default/theme/bgr-dashboard.jpg",
+  "sideBarHeaderImage": "./assets/_default/theme/bgr_sidebar.jpg",
+  "navBarLogo":"./assets/_default/theme/logo.svg",
+  "licenseKey": "Optimal_Systems_GmbH__Devs_UmlimitedOEM_31_May_2019__MTU1OTI1NzIwMDAwMA==f9a0c9ce183f739058295d6a64a30c84"
+}
