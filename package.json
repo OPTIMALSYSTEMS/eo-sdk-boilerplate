@@ -6,44 +6,29 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config node_modules/@eo-sdk/client/proxy.config.json",
-    "build": "ng build",
-    "build:prod": "ng build --prod",
-    "postbuild": "npm run postbuild:prod",
-    "postbuild:prod": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
-    "update": "npm install -P --save-exact @eo-sdk/client@stable",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "ng serve eo-sdk-boilerplate --proxy-config node_modules/@eo-sdk/client/proxy.config.json",
+    "build": "ng build eo-sdk-boilerplate",
+    "postbuild": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
+    "update": "npm install -P --save-exact @eo-sdk/client@current",
+    "test": "ng test eo-sdk-boilerplate"
   },
   "private": true,
   "dependencies": {
-    "@eo-sdk/client": "7.0.0-beta.0"
+    "@eo-sdk/client": "10.6.0-rc.11"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.0",
-    "@angular/cli": "11.2.0",
-    "@angular/compiler-cli": "11.2.0",
-    "@angular/language-service": "11.2.0",
-    "@types/jasmine": "~3.6.0",
-    "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@angular-devkit/build-angular": "15.2.2",
+    "@angular/cli": "15.2.2",
+    "@angular/compiler-cli": "15.2.2",
+    "@types/jasmine": "~4.3.0",
     "bestzip": "1.1.4",
-    "codelyzer": "^6.0.0",
-    "concurrently": "3.6.0",
-    "fs-extra": "^7.0.0",
-    "jasmine-core": "~3.6.0",
-    "jasmine-spec-reporter": "~5.0.0",
-    "karma": "~6.1.1",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.2",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "node-sass": "5.0.0",
-    "protractor": "~7.0.0",
-    "replace-in-file": "~3.4.2",
-    "ts-node": "~5.0.1",
-    "tslint": "~6.1.0",
-    "typescript": "~4.0.7"
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "replace-in-file": "3.1.0",
+    "typescript": "~4.9.4"
   }
 }

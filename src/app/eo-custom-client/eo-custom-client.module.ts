@@ -30,7 +30,7 @@ import {EoCustomClientRoutingModule} from './eo-custom-client-routing.module';
 })
 export class EoCustomClientModule {
 
-  static forRoot(components: any[] = []): ModuleWithProviders {
+  static forRoot(components: any[] = []): ModuleWithProviders<EoCustomClientModule> {
     return {
       ngModule: EoCustomClientModule,
       providers: [
