@@ -1,15 +1,15 @@
 {
   "name": "boilerplate15",
   "version": "0.0.0",
+  "config": {
+    "resourcename": "custom"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config node_modules/@eo-sdk/client/proxy.config.json",
-    "build": "ng build",
-    "build:prod": "ng build --prod",
-    "postbuild": "npm run postbuild:prod",
-    "postbuild:prod": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
+    "build": "ng build boilerplate15",
+    "postbuild": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
     "update": "npm install -P --save-exact @eo-sdk/client@stable",
-    "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
@@ -22,8 +22,8 @@
     "@angular/platform-browser": "15.2.2",
     "@angular/platform-browser-dynamic": "15.2.2",
     "@angular/router": "15.2.2",
-    "@eo-sdk/core": "10.6.0-rc.1",
-    "@eo-sdk/client": "10.6.0-rc.1",
+    "@eo-sdk/core": "10.6.0-rc.11",
+    "@eo-sdk/client": "10.6.0-rc.11",
     "ngx-toastr": "16.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -34,12 +34,14 @@
     "@angular/cli": "15.2.2",
     "@angular/compiler-cli": "15.2.2",
     "@types/jasmine": "~4.3.0",
+    "bestzip": "1.1.4",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "replace-in-file": "3.1.0",
     "typescript": "~4.9.4"
   }
 }
