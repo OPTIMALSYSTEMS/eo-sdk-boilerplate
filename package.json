@@ -9,7 +9,7 @@
     "start": "ng serve --proxy-config node_modules/@eo-sdk/client/proxy.config.json",
     "build": "ng build boilerplate15",
     "postbuild": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
-    "update": "npm install -P --save-exact @eo-sdk/client@stable",
+    "update": "npm install -P --save-exact @eo-sdk/client@current",
     "test": "ng test"
   },
   "private": true,
@@ -22,7 +22,6 @@
     "@angular/platform-browser": "15.2.2",
     "@angular/platform-browser-dynamic": "15.2.2",
     "@angular/router": "15.2.2",
-    "@eo-sdk/core": "10.6.0-rc.11",
     "@eo-sdk/client": "10.6.0-rc.11",
     "ngx-toastr": "16.0.2",
     "rxjs": "~7.5.0",
