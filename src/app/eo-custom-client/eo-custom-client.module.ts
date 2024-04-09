@@ -1,4 +1,4 @@
-import {ModuleWithProviders, NgModule, ANALYZE_FOR_ENTRY_COMPONENTS} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {EoFrameworkModule} from '@eo-sdk/client';
@@ -25,17 +25,7 @@ import {EoCustomClientRoutingModule} from './eo-custom-client-routing.module';
   ],
   providers: [],
   exports: [CustomPluginsModule, CustomActionsModule],
-  entryComponents: [],
   declarations: []
 })
 export class EoCustomClientModule {
-
-  static forRoot(components: any[] = []): ModuleWithProviders<EoCustomClientModule> {
-    return {
-      ngModule: EoCustomClientModule,
-      providers: [
-        {provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: components, multi: true}
-      ]
-    };
-  }
 }

@@ -39,7 +39,7 @@ import {ToastrModule} from 'ngx-toastr';
       translations: ['assets/_default/i18n/', 'assets/i18n/']
     }),
     EoFrameworkCoreModule.forRoot(),
-    EoCustomClientModule.forRoot(),
+    EoCustomClientModule,
     EoClientModule.forRoot()
   ],
   providers: [],
