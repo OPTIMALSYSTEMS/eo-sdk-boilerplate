@@ -14,6 +14,14 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "15.2.2",
+    "@angular/common": "15.2.2",
+    "@angular/compiler": "15.2.2",
+    "@angular/core": "15.2.2",
+    "@angular/forms": "15.2.2",
+    "@angular/platform-browser": "15.2.2",
+    "@angular/platform-browser-dynamic": "15.2.2",
+    "@angular/router": "15.2.2",
     "@eo-sdk/client": "10.6.0-rc.11"
   },
   "devDependencies": {
