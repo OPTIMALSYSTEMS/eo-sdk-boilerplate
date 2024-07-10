@@ -6,7 +6,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve eo-sdk-boilerplate --proxy-config node_modules/@eo-sdk/client/proxy.config.json",
+    "start": "ng serve eo-sdk-boilerplate --proxy-config node_modules/@eo-sdk/client/proxy.config.js",
     "build": "ng build eo-sdk-boilerplate",
     "postbuild": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
     "update": "npm install -P --save-exact @eo-sdk/client@current",
@@ -14,21 +14,22 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "17.1.2",
-    "@angular/cdk": "17.1.2",
-    "@angular/common": "17.1.2",
-    "@angular/compiler": "17.1.2",
-    "@angular/core": "17.1.2",
-    "@angular/forms": "17.1.2",
-    "@angular/platform-browser": "17.1.2",
-    "@angular/platform-browser-dynamic": "17.1.2",
-    "@angular/router": "17.1.2",
-    "@eo-sdk/client": "11.0.2"
+    "@angular/animations": "18.0.4",
+    "@angular/cdk": "18.0.4",
+    "@angular/common": "18.0.4",
+    "@angular/compiler": "18.0.4",
+    "@angular/core": "18.0.4",
+    "@angular/forms": "18.0.4",
+    "@angular/platform-browser": "18.0.4",
+    "@angular/platform-browser-dynamic": "18.0.4",
+    "@angular/router": "18.0.4",
+    "@eo-sdk/core": "11.7.0-beta.2",
+    "@eo-sdk/client": "11.7.0-beta.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "17.1.2",
-    "@angular/cli": "17.1.2",
-    "@angular/compiler-cli": "17.1.2",
+    "@angular-devkit/build-angular": "18.0.4",
+    "@angular/cli": "18.0.4",
+    "@angular/compiler-cli": "18.0.4",
     "@types/jasmine": "~4.3.0",
     "bestzip": "1.1.4",
     "jasmine-core": "~4.5.0",
@@ -38,6 +39,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "replace-in-file": "3.1.0",
-    "typescript": "~5.3.3"
+    "typescript": "~5.4.5"
   }
 }
