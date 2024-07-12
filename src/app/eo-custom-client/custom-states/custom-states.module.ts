@@ -4,12 +4,15 @@ import {Route, RouterModule} from '@angular/router';
 import {EoFrameworkModule} from '@eo-sdk/client';
 import {EoLinkPlugin} from '@eo-sdk/client';
 import {AuthGuard} from '@eo-sdk/client';
+import { MyProcessComponent } from './my-process/my-process.component';
 
 export const routes: Route[] = [
-];
+{path: MyProcessComponent.path, component: MyProcessComponent.component, canActivate: [AuthGuard]},
+  ];
 
 export const links: EoLinkPlugin[] = [
-];
+MyProcessComponent,
+  ];
 
 @NgModule({
   imports: [
@@ -17,7 +20,9 @@ export const links: EoLinkPlugin[] = [
     EoFrameworkModule,
     RouterModule.forChild(routes)
   ],
-  declarations: []
+  declarations: [
+    MyProcessComponent
+  ]
 })
 export class CustomStatesModule {
 }
