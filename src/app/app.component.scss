@@ -1,0 +1,13 @@
+// Display process-file-tab plugin only for type "foto'
+::ng-deep {
+    // hide by default
+    eo-object-details [data-id="eo.custom.plugin.process-file-tab"],
+    eo-object-details [ng-reflect-id="eo.custom.plugin.process-file-tab"] {
+        display: none !important;
+    }
+    // show for foto
+    eo-object-details[data-type=foto] [data-id="eo.custom.plugin.process-file-tab"],
+    eo-object-details[data-type=foto] [ng-reflect-id="eo.custom.plugin.process-file-tab"] {
+        display: inherit !important;
+    }
+}
