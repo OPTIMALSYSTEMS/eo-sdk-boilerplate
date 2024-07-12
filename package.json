@@ -6,7 +6,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve eo-sdk-boilerplate --proxy-config node_modules/@eo-sdk/client/proxy.config.js",
+    "start": "ng serve eo-sdk-boilerplate --proxy-config node_modules/@eo-sdk/client/proxy.config.js --port 4400",
     "build": "ng build eo-sdk-boilerplate",
     "postbuild": "node node_modules/@eo-sdk/client/misc/scripts/preparedist && node node_modules/@eo-sdk/client/misc/scripts/zipdist",
     "update": "npm install -P --save-exact @eo-sdk/client@current",
