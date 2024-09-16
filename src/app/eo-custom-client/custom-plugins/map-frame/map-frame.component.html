@@ -1,0 +1,10 @@
+<iframe
+  class="map"
+  [hidden]="mapAvailable"
+  #mapFrame
+  frameborder="0" allowfullscreen>
+</iframe>
+
+<section class="map__not-available" [hidden]="!mapAvailable">
+  <eo-icon class="no-file" [iconSrc]="'assets/_default/svg/ic_no-file.svg'"></eo-icon>
+</section>
