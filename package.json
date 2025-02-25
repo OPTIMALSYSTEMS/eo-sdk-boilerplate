@@ -23,7 +23,8 @@
     "@angular/platform-browser": "18.1.0",
     "@angular/platform-browser-dynamic": "18.1.0",
     "@angular/router": "18.1.0",
-    "@eo-sdk/client": "11.14.9"
+    "@eo-sdk/client": "11.14.9",
+    "rxjs": "7.8.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "18.1.0",
