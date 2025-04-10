@@ -1,5 +1,6 @@
 {
-  "eo.test.key": "test {{key}}",
-  "eo.custom.plugin.sample": "Sample Plugin DE",
-  "eo.custom.state.sample": "Sample State DE"
+  "eo.custom.plugin.map": "Karte",
+  "eo.custom.state.custom-object-details": "Meine Personalakte",
+  "o365-edit.action.label": "O365-Datei bearbeiten",
+  "o365-edit.action.description": "Bearbeite die O365-Datei für dieses Objekt"
 }

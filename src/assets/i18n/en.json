@@ -1,5 +1,6 @@
 {
-  "eo.test.key": "test {{key}}",
-  "eo.custom.plugin.sample": "Sample Plugin",
-  "eo.custom.state.sample": "Sample State"
+  "eo.custom.plugin.map": "Map",
+  "eo.custom.state.custom-object-details": "My Personnel file",
+  "o365-edit.action.label": "Edit o365 file",
+  "o365-edit.action.description": "Edit the o365 file for this object"
 }
